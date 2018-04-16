@@ -1,0 +1,69 @@
+@mixin Button() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: white;
+  background: var(--mainGradient);
+  text-decoration: none;
+  box-shadow: var(--mainShadow);
+}
+
+
+// MOBILE
+.NavigationItem { 
+  margin: 20px 0;
+  // box-sizing: border-box;
+  // display: block;
+  display: flex;
+  width: auto;
+
+  & a {
+    // color: #8F5C2C;
+    // text-decoration: none;
+    // width: 100%;
+    // box-sizing: border-box;
+    // display: block;
+    width: 100%;
+    @include Button();
+    padding: 10px 15px;
+
+    &:active, &.active, &:hover {
+      // color: #40A4C8;
+    }
+  }
+}
+
+// DESKTOP
+@media (min-width: 500px)
+{
+  .NavigationItem {
+    width: auto;
+    height: 100%;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      height: calc(100% - 20px);
+      // color: white;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // padding: 0 15px;
+      // background: var(--blueGradient);
+      // border-radius: 30px;
+      width: 100%;
+      @include Button();
+      padding: 0 15px;
+      transition: transform 0.2s;
+
+      &:active, &.active, &:hover {
+        // height: calc(100% - 10px);
+        transform: scale(1.15);
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.Auth {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: var(--mainShadow);
+  /* border: 1px solid #eee; */
+  border-radius: 30px;
+  background: var(--mainGradient);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.Input {
+  display: block;
+  border-radius: 15px;
+}
+
+@media (min-width: 600px) {
+  .ConctactData {
+    width: 500px;
+  }
+}

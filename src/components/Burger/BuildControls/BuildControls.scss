@@ -1,0 +1,73 @@
+.BuildControls {
+  width: calc(100% - 30px);
+  background: var(--mainGradient);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 1px #ccc;
+  border-radius: 30px;
+  margin: auto;
+  margin-bottom: 40px;
+  box-shadow: var(--mainShadow);
+
+  p { // price
+    background: white;
+    border-radius: 30px;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0;
+    box-shadow: var(--mainShadow);
+    transform: translateY(-22px);
+  }
+}
+
+.OrderButton {
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  box-shadow: var(--mainShadow);
+  transition: transform 0.3s;
+  transform: translateY(25px) scale(1);
+
+  &:hover {
+    transform: translateY(25px) scale(1.1);
+  }
+
+  &:active {
+    animation: enable 0.3s linear;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #888888;
+  }
+
+  &:not(:disabled) {
+    animation: enable 0.3s linear;
+  }
+}
+
+// DESKTOP
+@media (min-width: 500px) 
+{
+  .BuildControls {
+    width: 500px;
+  }
+}
+
+@keyframes enable {
+  0% {
+      transform: scale(1) translateY(25px);
+  }
+  60% {
+      transform: scale(1.1) translateY(25px);
+  }
+  100% {
+      transform: scale(1) translateY(25px);
+  }
+}

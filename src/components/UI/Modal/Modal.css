@@ -1,0 +1,36 @@
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 80%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  padding: 16px 36px;
+  left: 10%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, opacity 0.3s;
+  /* transition-timing-function: cubic-bezier(0,.89,.01,.99); */
+}
+
+.Show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.Hide {
+  transform: translateY(-100vh);
+  opacity: 0;
+}
+
+@media (min-width: 600px) {
+  .Modal {
+      width: 500px;
+      left: calc(50% - 250px);
+  }
+}
+@media (max-width: 800px) {
+  .Modal {
+    top: 50px;
+  }
+}
