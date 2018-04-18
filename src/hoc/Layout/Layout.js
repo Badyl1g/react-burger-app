@@ -5,6 +5,7 @@ import Aux from '../React-Aux/React-Aux';
 import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import Footer from '../../components/Navigation/Footer/Footer';
 
 class Layout extends Component {
   state = {
@@ -34,6 +35,7 @@ class Layout extends Component {
         <main className={classes.Content}>
           {this.props.children}
         </main>
+        <Footer />
       </Aux>
     );
   }

@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import classes from './Auth.css';
+import classes from './Auth.scss';
 import * as actions from '../../store/actions/index';
 import { updateObject, checkValidity } from '../../shared/utility';
 
@@ -126,6 +126,7 @@ class Auth extends Component {
     return (
       <div className={classes.Auth}>
         {authRedirect}
+        <h2>{!this.state.isSignup ? 'Log in' : 'Sign up for free!'}</h2>
         {errorMessage}
         <form onSubmit={this.submitHandler}>
           {form}
@@ -134,7 +135,7 @@ class Auth extends Component {
         <Button 
           clicked={this.switchAuthModeHandler}
           btnType="Danger">
-          SWITCH TO {this.state.isSignup ? 'SIGN-IN' : 'SIGN-UP'}
+          {this.state.isSignup ? 'Already have an account? Log in!' : `Don't have an account? Sign up!`}
         </Button>
       </div>
     );

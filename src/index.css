@@ -4,6 +4,8 @@ body {
   font-family: 'Russo One';
 }
 :root {
+  /* --debug: 1px solid red; */
+
   --mainGradient: linear-gradient(to bottom right, #9CECFB, #65C7F7, #0052D4);
   --secondaryGradient: linear-gradient(to bottom right, #B06AB3, #4568DC);
   
@@ -11,7 +13,10 @@ body {
   --purple: #8C49F6;
   /* --mainShadow: 0px 2px 4px 2px rgba(0,0,0,0.3); */
   /* --secondaryShadow: 0px 2px 50px -5px rgba(0,0,0,0.2); */
-  --mainShadow: 0px 2px 50px -5px rgba(0,0,0,0.2);
+  --mainShadow: 0px 2px 50px -5px rgba(0,0,0,0.3);
+  /* --mainShadow: 0px 2px 50px -5px rgba(0,150,255,0.4); */
+
+  --appWidth: calc(100% - 30px);
 }
 
 input:-webkit-autofill,

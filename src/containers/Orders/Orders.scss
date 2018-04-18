@@ -1,11 +1,25 @@
 .Orders {
   // width: 80%;
+  width: var(--appWidth);
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
+  border: var(--debug);
   
   .Sorting {
     width: 80%;
+  }
+}
+
+@media (min-width: 500px) {
+  .Orders {
+    // width: 80%;
+    width: 300px;
+    margin-left: 30px;
+    // width: 100%;
+    // display: grid;
+    // grid-template-columns: 35% 65%;
   }
 }

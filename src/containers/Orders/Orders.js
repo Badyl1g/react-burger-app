@@ -25,7 +25,8 @@ function order(order) {
 
 class Orders extends Component {
   state = {
-    sort: 'newest'
+    sort: 'newest',
+    // selectedOrder: null
   }
 
   componentDidMount() {
@@ -33,9 +34,19 @@ class Orders extends Component {
   }
 
   inputChangedHandler(event) {
-    // const sort = event.target.value;
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({ sort: event.target.value });
+  }
+
+  selectedOrderHandler(index) {
+    console.log('selectedOrder', index);
+    // this.setState({selectedOrder: this.props.orders[index]});
+  }
+
+  purchaseHandler = (ingredients) => {
+    this.props.onSetIngredients(ingredients);
+    this.props.onSetAuthRedirectPath('/checkout'); // user is building a burger, redirect him after signing in to '/checkout'
+    this.props.history.push('/auth');
   }
 
   render() {
@@ -45,27 +56,30 @@ class Orders extends Component {
       if (this.state.sort === 'newest') {
         orders = (
           this.props.orders
-            .sort(order('ascending'))
+            .sort(order('desc'))
             .map((order, i) => (
             <Order 
               key={order.id}
               ingredients={order.ingredients}
               price={+order.price}
               date={order.date}
-              last={i === 0} />
+              last={i === 0}
+              orderAgain={this.purchaseHandler}
+              clicked={() => this.selectedOrderHandler(i)} />
           ))
         );
       } else if (this.state.sort === 'oldest') {
         orders = (
           this.props.orders
-            .sort(order('desc'))
+            .sort(order('ascending'))
             .map((order, i) => (
               <Order 
                 key={order.id}
                 ingredients={order.ingredients}
                 price={+order.price}
                 date={order.date}
-                last={i === 0} />
+                last={i === 0}
+                orderAgain={this.purchaseHandler} />
             ))
         );
       }
@@ -97,13 +111,16 @@ const mapStateToProps = state => {
     orders: state.order.orders,
     loading: state.order.loading,
     token: state.auth.token,
-    userId: state.auth.userId
+    userId: state.auth.userId,
+    isAuthenticated: state.auth.token !== null
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetchOrders: (token, userId) => dispatch(actions.fetchOrders(token, userId))
+    onFetchOrders: (token, userId) => dispatch(actions.fetchOrders(token, userId)),
+    onSetIngredients: (ingredients) => dispatch(actions.setIngredients(ingredients)),
+    onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
 };
 
