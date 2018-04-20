@@ -12,7 +12,7 @@ const buildControl = (props) => (
         disabled={props.disabled}>
         {/* - */}
         <svg viewBox="0 0 100 100" width="100%" height="100%">
-          <rect width="60" height="15" x="21" y="45" fill="#4E8AFF"></rect>
+          <rect width="60" height="15" x="21" y="45"></rect>
         </svg>
       </button>
       <button 
@@ -20,8 +20,8 @@ const buildControl = (props) => (
         onClick={props.added}>
         {/* + */}
         <svg viewBox="0 0 100 100" width="100%" height="100%">
-          <rect width="60" height="15" x="21" y="45" fill="#4E8AFF"></rect>
-          <rect width="15" height="60" x="45" y="21" fill="#4E8AFF"></rect>
+          <rect width="60" height="15" x="21" y="45"></rect>
+          <rect width="15" height="60" x="45" y="21"></rect>
         </svg>
       </button>
     </div>

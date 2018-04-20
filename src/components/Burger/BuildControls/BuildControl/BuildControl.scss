@@ -51,12 +51,18 @@
 
 .BuildControl .Less {  
   background-color: white;
-  color: var(--blue);
+
+  svg rect {
+    fill: var(--lightBlue);
+  }
 }
 
 .BuildControl .More {
   background-color: white;
-  color: var(--purple);
+
+  svg rect {
+    fill: var(--blue);
+  }
 }
 
 .BuildControl .Less:hover, .BuildControl .More:hover {
