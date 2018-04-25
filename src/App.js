@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from './hoc/Layout/Layout';
+import Footer from './components/Navigation/Footer/Footer';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
@@ -45,6 +46,7 @@ class App extends Component {
       <div>
         <Layout>
           {routes}
+          <Footer />
         </Layout>
       </div>
     );

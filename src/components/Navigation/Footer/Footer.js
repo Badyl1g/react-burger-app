@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Footer.scss';
 
 const footer = (props) => (
-  <footer>BurgerApp</footer>
+  <footer className={classes.Footer}>BurgerApp</footer>
 );
 
 export default footer;

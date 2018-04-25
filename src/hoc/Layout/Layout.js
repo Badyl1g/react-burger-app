@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import Aux from '../React-Aux/React-Aux';
-import classes from './Layout.css';
+import classes from './Layout.scss';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
-import Footer from '../../components/Navigation/Footer/Footer';
+// import Footer from '../../components/Navigation/Footer/Footer';
 
 class Layout extends Component {
   state = {
@@ -23,6 +23,11 @@ class Layout extends Component {
   }
 
   render() {
+    let contentClasses = [classes.Content];
+    if (this.state.showSideDrawer) {
+      contentClasses = [classes.Content, classes.shrink];
+    }
+
     return (
       <Aux>
         <Toolbar 
@@ -32,10 +37,10 @@ class Layout extends Component {
           isAuth={this.props.isAuthenticated}
           open={this.state.showSideDrawer} 
           closed={this.sideDrawerClosedHandler} />
-        <main className={classes.Content}>
+        <main className={contentClasses.join(' ')}>
           {this.props.children}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </Aux>
     );
   }
