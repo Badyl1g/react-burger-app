@@ -9,6 +9,8 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import Input from '../../components/UI/Input/Input';
 import classes from './Orders.scss';
 
+// import Spinner from 'react-spinkit';
+
 function order(order) {
   let sortOrder = 1
   if (order === 'desc') {
@@ -25,7 +27,7 @@ function order(order) {
 
 class Orders extends Component {
   state = {
-    sort: 'newest',
+    sort: 'newest'
     // selectedOrder: null
   }
 
