@@ -28,20 +28,3 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
-
-.spinner-enter {
-  opacity: 0;
-  transform: scale(5);
-}
-.spinner-enter-active {
-  opacity: 1;
-  transform: scale(1);
-}
-.spinner-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-.spinner-exit-active {
-  opacity: 0;
-  transform: scale(0.5);
-}

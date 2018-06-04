@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { CSSTransition } from 'react-transition-group';
 
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
-import classes from './ContactData.css';
+import classes from './ContactData.scss';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
@@ -172,10 +173,14 @@ class ContactData extends Component {
       form = <Spinner />
     }
     return (
-      <div className={classes.ContactData}>
-        <h4>Enter your Contact Data</h4>
-        {form}
-      </div>
+      // <CSSTransition 
+      //   classNames="fade"
+      //   timeout={2000}>
+        <div className={classes.ContactData}>
+          <h4>Enter your Contact Data</h4>
+          {form}
+        </div>
+      // </CSSTransition>
     );
   }
 }

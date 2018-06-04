@@ -6,6 +6,13 @@
   border: 1px solid #eee;
   padding: 10px;
   box-sizing: border-box;
+  /*&.fade-enter {
+    opacity: 0;
+  }
+  &.fade-enter-active {
+    opacity: 1;
+    transition: 2000ms;
+  }*/
 }
 
 .Input {
@@ -13,7 +20,7 @@
 }
 
 @media (min-width: 600px) {
-  .ConctactData {
+  .ContactData {
     width: 500px;
   }
 }
